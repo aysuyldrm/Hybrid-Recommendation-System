@@ -1,0 +1,70 @@
+🎬 Hybrid Recommender System
+
+This project implements a Hybrid Recommendation System that combines User-Based and Item-Based Collaborative Filtering to generate accurate and personalized movie recommendations.
+
+The system produces 10 recommendations per user:
+
+5 from user-based similarity
+
+5 from item-based similarity
+
+🔍 Problem Definition
+
+Single recommendation approaches often have limitations:
+
+User-based methods capture behavioral similarity but can be unstable
+
+Item-based methods are more stable but less personalized
+
+To overcome this, a hybrid approach is used to balance:
+
+User behavior
+
+Item similarity
+
+🧠 Methodology
+User-Based Collaborative Filtering
+
+Filters out rarely rated movies to reduce noise
+
+Identifies users who watched at least 60% of the same movies
+
+Uses Pearson correlation to measure user similarity
+
+Applies weighted average ratings for recommendations
+
+Item-Based Collaborative Filtering
+
+Selects the most recently watched movie rated 5 stars
+
+Computes similarity between movies using correlation
+
+Recommends the most similar items
+
+📊 Output
+
+5 user-based recommendations
+
+5 item-based recommendations
+
+Final hybrid list of 10 personalized movie suggestions
+
+🛠️ Technologies Used
+
+Python
+
+Pandas, NumPy
+
+Seaborn, Matplotlib
+
+Collaborative Filtering
+
+Correlation Analysis
+
+🎯 Key Takeaways
+
+Demonstrates practical recommender system design
+
+Combines statistical reasoning with real-world data
+
+Focuses on scalability and relevance rather than purely academic models
