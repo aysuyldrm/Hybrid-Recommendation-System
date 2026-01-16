@@ -1,0 +1,62 @@
+Project Summary – Hybrid Recommender System
+
+In this project, I built a Hybrid Recommender System that combines User-Based and Item-Based Collaborative Filtering to generate more accurate and balanced movie recommendations. For a given user, the system produces 10 recommendations in total:
+
+5 from a user-based model
+
+5 from an item-based model
+
+The goal was to leverage the strengths of both approaches while minimizing their individual limitations.
+
+🔹 Why a Hybrid Model?
+
+Using a single recommendation technique can be limiting:
+
+User-based collaborative filtering is strong at capturing behavioral similarity between users.
+
+Item-based collaborative filtering is more stable and effective at finding items similar to those the user already likes.
+
+By combining both, I aimed to:
+
+Capture collective user behavior
+
+While also respecting individual content preferences
+
+This results in more reliable and relevant recommendations.
+
+🔹 How the User-Based Model Works
+
+I first prepared the data by removing movies with fewer than 1,000 ratings to reduce noise.
+
+I created a user–movie rating matrix.
+
+For the target user, I identified all movies they had rated.
+
+I selected users who had watched at least 60% of the same movies, treating them as similar users.
+
+I calculated Pearson correlation between users to measure similarity.
+
+I weighted each neighbor’s ratings by their correlation score to compute a
+Weighted Average Recommendation Score.
+
+Based on this score, I generated the top 5 movie recommendations.
+
+👉 This approach answers the question:
+“What did users with very similar viewing behavior like?”
+
+🔹 How the Item-Based Model Works
+
+I selected the movie that the user:
+
+Rated 5 stars
+
+And watched most recently
+
+Using the user–movie matrix, I calculated correlations between this movie and all other movies.
+
+I ranked movies based on similarity scores.
+
+Excluding the movie itself, I recommended the top 5 most similar movies.
+
+👉 This approach answers the question:
+“If the user loved this movie, what other movies are most similar to it?”
